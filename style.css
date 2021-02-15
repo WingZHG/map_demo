@@ -6,6 +6,10 @@ body#home {
 	margin-left:200px;
 }
 
+.leaflet-default-icon-path {
+	background-image: url(./images/markers/marker-icon.png);
+	}
+
 a {
 	color:#1978cf;
 }
