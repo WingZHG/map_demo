@@ -1,0 +1,33 @@
+var samples_c = {
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          40, 430
+        ]
+      },
+      "properties": {
+        "id": "Samples Group C: 1-4",
+        "location": "Fridge 1 - Rack 4",
+        "notes": " "
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          40, 490
+        ]
+      },
+      "properties": {
+        "id": "Samples Group C : 5-9",
+        "location": "Fridge 1 - Rack 6",
+        "notes": " "
+      }
+    }
+  ]
+}

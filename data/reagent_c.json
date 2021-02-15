@@ -1,0 +1,33 @@
+var reagent_c = {
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1237, 505
+        ]
+      },
+      "properties": {
+        "id": "Reagents Type C",
+        "location": "Freezer 1",
+        "notes": " "
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          40, 330
+        ]
+      },
+      "properties": {
+        "id": "Reagents Type C",
+        "location": "Freezer 3",
+        "notes": " "
+      }
+    }
+  ]
+}

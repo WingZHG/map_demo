@@ -1,0 +1,135 @@
+var pcr = {
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "id": "PCR Mastercycler Themocycler - ep384",
+      "properties": {
+        "id": "PCR Mastercycler Themocycler - ep384",
+        "location": "Counter",
+		"notes":  ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          700,
+          680
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/749982528",
+      "properties": {
+        "id": "PCR Mastercycler Themocycler - epgradientS",
+        "location": "Counter",
+        "name": "Santa Pudenziana",
+        "natural": "spring",
+		"notes":  ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          740,
+          680
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "PCR Mastercycler Themocycler - epgradientS",
+      "properties": {
+        "id": "PCR Mastercycler Themocycler - epgradientS",
+        "location": "Counter",
+		"notes":  ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          780,
+          680
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/867428079",
+      "properties": {
+        "id": "PCR Vapo-protect ProS Thermocycler",
+        "location": "Counter",
+		"notes":  ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          820,
+          680
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/919072243",
+      "properties": {
+        "id": "PCR Vapo-protect ProS Thermocycler",
+        "location": "Counter",
+		"notes":  ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          860,
+          680
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/963839211",
+      "properties": {
+        "id": "PCR Vapo-protect ProS Thermocycler",
+        "location": "Counter",
+		"notes":  ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          900,
+          680
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/963955653",
+      "properties": {
+        "id": "PCR Vapo-protect ProS Thermocycler",
+        "location": "Counter",
+		"notes":  ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          940,
+          680
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/1227200162",
+      "properties": {
+        "id": "PCR Vapo-protect ProS Thermocycler",
+        "location": "Counter",
+		"notes":  ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          980,
+          680
+        ]
+      }
+    }
+  ]
+};

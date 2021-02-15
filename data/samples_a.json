@@ -1,0 +1,48 @@
+var samples_a = {
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          40, 460
+        ]
+      },
+      "properties": {
+        "id": "Samples Group A : 1-4",
+        "location": "Fridge 1 - Rack 1",
+        "notes": " "
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1237, 345
+        ]
+      },
+      "properties": {
+        "id": "Samples Group A : 5-8",
+        "location": "Freezer 2 - Rack 3",
+        "notes": " "
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          40, 330
+        ]
+      },
+      "properties": {
+        "id": "Samples Group A : 9-12",
+        "location": "Freezer 4 - Rack 2",
+        "notes": " "
+      }
+    }
+    
+  ]
+}

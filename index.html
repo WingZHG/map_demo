@@ -1,0 +1,242 @@
+<html>
+<head>
+  <title>Barrett lab map demo</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+<link rel="stylesheet" href="./dist/leaflet-panel-layers.src.css" />
+<script src="./dist/leaflet-panel-layers.src.js"></script>
+<link rel="stylesheet" href="icons.css" />
+<link rel="stylesheet" href="style.css" />
+
+  <style>
+    #map{ height: 100%}
+  </style>
+</head>
+<body>
+
+<div id="map"></div>
+
+<script
+			  src="https://code.jquery.com/jquery-3.4.1.min.js"
+			  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+			  crossorigin="anonymous"></script>
+<!-- GEOJSON DATA -->
+<script src="data/bar.js"></script>
+<script src="data/pcr.json"></script>
+<script src="data/Drink.json"></script>
+<script src="data/test.json"></script>
+<script src="data/reagent_a.json"></script>
+<script src="data/reagent_b.json"></script>
+<script src="data/reagent_c.json"></script>
+<script src="data/reagent_d.json"></script>
+<script src="data/reagent_e.json"></script>
+<script src="data/reagent_f.json"></script>
+<script src="data/reagent_g.json"></script>
+<script src="data/reagent_h.json"></script>
+<script src="data/ethanol.json"></script>
+<script src="data/incubator.json"></script>
+<script src="data/electrophoresis.json"></script>
+<script src="data/mixer.json"></script>
+<script src="data/samples_a.json"></script>
+<script src="data/samples_b.json"></script>
+<script src="data/samples_c.json"></script>
+<script src="data/samples_d.json"></script>
+<script>
+
+L.Map = L.Map.extend({
+    openPopup: function(popup) {
+        this._popup = popup;
+        return this.addLayer(popup).fire('popupopen', {
+            popup: this._popup
+        });
+    }
+});
+
+
+
+var map = L.map('map', {
+    crs: L.CRS.Simple,
+	maxZoom: 2,
+    minZoom: -0.55
+	});
+
+		var bounds = [[0,0], [721,1280]];
+		var image = L.imageOverlay('./lab.png', bounds).addTo(map);
+	
+	
+	osmLayer = new L.TileLayer('');
+
+map.addLayer(osmLayer);
+
+function forEachFeature(feature, layer) {
+		var popupContent = "<p> <b>" + feature.properties.id + 
+			"</b></br>"+ "Location: " + feature.properties.location +
+			"</br>"+ "Notes: " + feature.properties.notes + "</p>";
+
+		layer.bindPopup(popupContent);
+	}
+
+
+var baseLayers = [
+	{
+		group: "Equiment",
+		layers: [
+			{
+				active: false,
+				name: "PCR Thermocyclers",
+				icon: '<i class=""></i>',
+				layer: L.geoJson(pcr, { onEachFeature:forEachFeature})
+				
+			},
+			{
+				active: false,
+				name: "Incubators",
+				icon: '<i class=""></i>',
+				layer: L.geoJson(incubator, { onEachFeature:forEachFeature})
+				
+			},
+			{
+				active: false,
+				name: "Vortex Mixers",
+				icon: '<i class=""></i>',
+				layer: L.geoJson(mixer, { onEachFeature:forEachFeature})
+				
+			},
+			{
+				active: false,
+				name: "Electrophoresis rig",
+				icon: '<i class=""></i>',
+				layer: L.geoJson(electrophoresis_rig, { onEachFeature:forEachFeature})
+				
+			},
+		]
+	},
+	{
+		group: "Chemicals",
+		layers: [
+			{
+				active: false,
+				name: "Ethanol",
+				icon: '<i class=""></i>',
+				layer: L.geoJson(ethanol, { onEachFeature:forEachFeature})
+				
+			}
+		]
+	},
+	{
+		group: "Reagents",
+		layers: [
+			{
+				active: false,
+				name: "Reagent Type A",
+				icon: '<i class=""></i>',
+				layer: L.geoJson(reagent_a, { onEachFeature:forEachFeature})
+				
+			},
+			{
+				active: false,
+				name: "Reagent Type B",
+				icon: '<i class=""></i>',
+				layer: L.geoJson(reagent_b, { onEachFeature:forEachFeature})
+				
+			},
+			{
+				active: false,
+				name: "Reagent Type C",
+				icon: '<i class=""></i>',
+				layer: L.geoJson(reagent_c, { onEachFeature:forEachFeature})
+				
+			},
+			{
+				active: false,
+				name: "Reagent Type D",
+				icon: '<i class=""></i>',
+				layer: L.geoJson(reagent_d, { onEachFeature:forEachFeature})
+				
+			},
+			{
+				active: false,
+				name: "Reagent Type E",
+				icon: '<i class=""></i>',
+				layer: L.geoJson(reagent_e, { onEachFeature:forEachFeature})
+				
+			},
+			{
+				active: false,
+				name: "Reagent Type F",
+				icon: '<i class=""></i>',
+				layer: L.geoJson(reagent_f, { onEachFeature:forEachFeature})
+				
+			},
+			{
+				active: false,
+				name: "Reagent Type G",
+				icon: '<i class=""></i>',
+				layer: L.geoJson(reagent_g, { onEachFeature:forEachFeature})
+				
+			},
+			{
+				active: false,
+				name: "Reagent Type H",
+				icon: '<i class=""></i>',
+				layer: L.geoJson(reagent_h, { onEachFeature:forEachFeature})
+				
+			}
+		]
+	},
+	{
+		group: "Samples",
+		layers: [
+			{
+				active: false,
+				name: "Samples Group A",
+				icon: '<i class=""></i>',
+				layer: L.geoJson(samples_a, { onEachFeature:forEachFeature})
+				
+			},
+			{
+				active: false,
+				name: "Samples Group B",
+				icon: '<i class=""></i>',
+				layer: L.geoJson(samples_b, { onEachFeature:forEachFeature})
+				
+			},
+			{
+				active: false,
+				name: "Samples Group C",
+				icon: '<i class=""></i>',
+				layer: L.geoJson(samples_c, { onEachFeature:forEachFeature})
+				
+			},
+			{
+				active: false,
+				name: "Samples Group D",
+				icon: '<i class=""></i>',
+				layer: L.geoJson(samples_d, { onEachFeature:forEachFeature})
+				
+			}
+		]
+	},
+	
+];
+
+
+		map.fitBounds(bounds);
+
+var overLayers = [
+
+	
+];
+
+var panelLayers = new L.Control.PanelLayers(baseLayers, overLayers, {
+	//compact: true,
+	//collapsed: true,
+	collapsibleGroups: true
+});
+
+map.addControl(panelLayers);
+</script>
+<script type="text/javascript" src="/labs-common.js"></script>
+
+</body>
+</html>

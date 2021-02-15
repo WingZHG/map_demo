@@ -1,0 +1,48 @@
+var reagent_d = {
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          850, 650
+        ]
+      },
+      "properties": {
+        "id": "Reagents Type C",
+        "location": "Mini Freezer",
+        "notes": " "
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          850, 650
+        ]
+      },
+      "properties": {
+        "id": "Reagents Type C",
+        "location": "Mini Freezer",
+        "notes": " "
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          40, 330
+        ]
+      },
+      "properties": {
+        "id": "Reagents Type C",
+        "location": "Freezer 4",
+        "notes": " "
+      }
+    }
+    
+  ]
+}

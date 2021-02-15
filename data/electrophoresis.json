@@ -1,0 +1,33 @@
+var electrophoresis_rig = {
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          145, 36
+        ]
+      },
+      "properties": {
+        "id": "Electrophoresis Rig - FB1000",
+        "location": "Table",
+        "notes": " "
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105, 36
+        ]
+      },
+      "properties": {
+        "id": "Electrophoresis Rig - FB300",
+        "location": "Table",
+        "notes": " "
+      }
+    }
+  ]
+}

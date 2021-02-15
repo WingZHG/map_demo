@@ -1,0 +1,33 @@
+var incubator = {
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          455, 36
+        ]
+      },
+      "properties": {
+        "id": "VWR INCUBATOR GRAV. CONVECTION, 5.4 C.F., 120V",
+        "location": "Table",
+        "notes": " "
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          145, 36
+        ]
+      },
+      "properties": {
+        "id": "Isotemp incubator",
+        "location": "Table",
+        "notes": " "
+      }
+    }
+  ]
+}

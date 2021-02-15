@@ -1,0 +1,48 @@
+var reagent_e = {
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1237, 505
+        ]
+      },
+      "properties": {
+        "id": "Reagents Type E",
+        "location": "Freezer 1",
+        "notes": " "
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1237, 345
+        ]
+      },
+      "properties": {
+        "id": "Reagents Type E",
+        "location": "Freezer 2",
+        "notes": " "
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          850, 650
+        ]
+      },
+      "properties": {
+        "id": "Reagents Type E",
+        "location": "Mini Freezer",
+        "notes": " "
+      }
+    }
+    
+  ]
+}

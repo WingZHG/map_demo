@@ -1,0 +1,61 @@
+var mixer = {
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          955, 330
+        ]
+      },
+      "properties": {
+        "id": "VWR VORTEXER MINI, 120V - 1",
+        "location": "Station 3",
+        "notes": " "
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          995, 330
+        ]
+      },
+      "properties": {
+        "id": "VWR VORTEXER MINI, 120V - 2",
+        "location": "Station 3",
+        "notes": " "
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          995, 145
+        ]
+      },
+      "properties": {
+        "id": "VWR VORTEXER MINI, 120V - 3",
+        "location": "Station 3",
+        "notes": " "
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          955, 145
+        ]
+      },
+      "properties": {
+        "id": "VWR VORTEXER MINI, 120V - 4",
+        "location": "Station 3",
+        "notes": " "
+      }
+    }	
+  ]
+}
