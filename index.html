@@ -1,12 +1,14 @@
 <html>
 <head>
   <title>Barrett lab map demo</title>
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
-<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <link rel="stylesheet" href="./dist/leaflet-panel-layers.src.css" />
 <script src="./dist/leaflet-panel-layers.src.js"></script>
 <link rel="stylesheet" href="icons.css" />
 <link rel="stylesheet" href="style.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
+
 
   <style>
     #map{ height: 100%}
@@ -20,24 +22,7 @@
 			  src="https://code.jquery.com/jquery-3.4.1.min.js"
 			  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
 			  crossorigin="anonymous"></script>
-<!-- GEOJSON DATA -->
-<script src="data/pcr.json"></script>
-<script src="data/reagent_a.json"></script>
-<script src="data/reagent_b.json"></script>
-<script src="data/reagent_c.json"></script>
-<script src="data/reagent_d.json"></script>
-<script src="data/reagent_e.json"></script>
-<script src="data/reagent_f.json"></script>
-<script src="data/reagent_g.json"></script>
-<script src="data/reagent_h.json"></script>
-<script src="data/ethanol.json"></script>
-<script src="data/incubator.json"></script>
-<script src="data/electrophoresis.json"></script>
-<script src="data/mixer.json"></script>
-<script src="data/samples_a.json"></script>
-<script src="data/samples_b.json"></script>
-<script src="data/samples_c.json"></script>
-<script src="data/samples_d.json"></script>
+
 <script>
 
 L.Map = L.Map.extend({
@@ -74,151 +59,57 @@ function forEachFeature(feature, layer) {
 	}
 
 
-var baseLayers = [
-	{
-		group: "Equiment",
-		layers: [
-			{
-				active: false,
-				name: "PCR Thermocyclers",
-				icon: '<i class=""></i>',
-				layer: L.geoJson(pcr, { onEachFeature:forEachFeature})
-				
-			},
-			{
-				active: false,
-				name: "Incubators",
-				icon: '<i class=""></i>',
-				layer: L.geoJson(incubator, { onEachFeature:forEachFeature})
-				
-			},
-			{
-				active: false,
-				name: "Vortex Mixers",
-				icon: '<i class=""></i>',
-				layer: L.geoJson(mixer, { onEachFeature:forEachFeature})
-				
-			},
-			{
-				active: false,
-				name: "Electrophoresis rig",
-				icon: '<i class=""></i>',
-				layer: L.geoJson(electrophoresis_rig, { onEachFeature:forEachFeature})
-				
-			},
-		]
-	},
-	{
-		group: "Chemicals",
-		layers: [
-			{
-				active: false,
-				name: "Ethanol",
-				icon: '<i class=""></i>',
-				layer: L.geoJson(ethanol, { onEachFeature:forEachFeature})
-				
-			}
-		]
-	},
-	{
-		group: "Reagents",
-		layers: [
-			{
-				active: false,
-				name: "Reagent Type A",
-				icon: '<i class=""></i>',
-				layer: L.geoJson(reagent_a, { onEachFeature:forEachFeature})
-				
-			},
-			{
-				active: false,
-				name: "Reagent Type B",
-				icon: '<i class=""></i>',
-				layer: L.geoJson(reagent_b, { onEachFeature:forEachFeature})
-				
-			},
-			{
-				active: false,
-				name: "Reagent Type C",
-				icon: '<i class=""></i>',
-				layer: L.geoJson(reagent_c, { onEachFeature:forEachFeature})
-				
-			},
-			{
-				active: false,
-				name: "Reagent Type D",
-				icon: '<i class=""></i>',
-				layer: L.geoJson(reagent_d, { onEachFeature:forEachFeature})
-				
-			},
-			{
-				active: false,
-				name: "Reagent Type E",
-				icon: '<i class=""></i>',
-				layer: L.geoJson(reagent_e, { onEachFeature:forEachFeature})
-				
-			},
-			{
-				active: false,
-				name: "Reagent Type F",
-				icon: '<i class=""></i>',
-				layer: L.geoJson(reagent_f, { onEachFeature:forEachFeature})
-				
-			},
-			{
-				active: false,
-				name: "Reagent Type G",
-				icon: '<i class=""></i>',
-				layer: L.geoJson(reagent_g, { onEachFeature:forEachFeature})
-				
-			},
-			{
-				active: false,
-				name: "Reagent Type H",
-				icon: '<i class=""></i>',
-				layer: L.geoJson(reagent_h, { onEachFeature:forEachFeature})
-				
-			}
-		]
-	},
-	{
-		group: "Samples",
-		layers: [
-			{
-				active: false,
-				name: "Samples Group A",
-				icon: '<i class=""></i>',
-				layer: L.geoJson(samples_a, { onEachFeature:forEachFeature})
-				
-			},
-			{
-				active: false,
-				name: "Samples Group B",
-				icon: '<i class=""></i>',
-				layer: L.geoJson(samples_b, { onEachFeature:forEachFeature})
-				
-			},
-			{
-				active: false,
-				name: "Samples Group C",
-				icon: '<i class=""></i>',
-				layer: L.geoJson(samples_c, { onEachFeature:forEachFeature})
-				
-			},
-			{
-				active: false,
-				name: "Samples Group D",
-				icon: '<i class=""></i>',
-				layer: L.geoJson(samples_d, { onEachFeature:forEachFeature})
-				
-			}
-		]
-	},
-	
+
+fetch('https://script.google.com/macros/s/AKfycbzQKn2Dfo6c58SAOS0G5E2Z6p8Ro7Ds7aZXFx0l2m5sbqOzb65VrXr9UI82JbZRcdYM/exec')
+.then(response => response.json())
+  .then(data => {
+    // Initialize a structure to hold layers for each group
+    var groupLayers = {};
+	var baseLayers = [
+  // Pre-existing layers or groups can be defined here
 ];
+    // Process each item and organize by group and type
+    data.forEach(item => {
+      const latitude = parseFloat(item.latitude);
+      const longitude = parseFloat(item.longtitude);
 
+      if (!isNaN(latitude) && !isNaN(longitude)) {
+        // Initialize group if it doesn't exist
+        if (!groupLayers[item.group]) {
+          groupLayers[item.group] = {};
+        }
 
-		map.fitBounds(bounds);
+        // Initialize type layer group within the group if it doesn't exist
+        if (!groupLayers[item.group][item.type]) {
+          groupLayers[item.group][item.type] = L.layerGroup();
+        }
+
+        // Create a marker for each item
+        var itemMarker = L.marker([latitude, longitude])
+                          .bindPopup(`<b>${item.item}</b><br>Location: ${item.location}`);
+
+        // Add the marker to the corresponding type layer group
+        groupLayers[item.group][item.type].addLayer(itemMarker);
+      }
+    });
+
+    // Add each group with its types to baseLayers
+    Object.keys(groupLayers).forEach(groupName => {
+      var groupLayerEntries = Object.keys(groupLayers[groupName]).map(typeName => {
+        return {
+          name: typeName,
+          icon: '<i class=""></i>',
+          layer: groupLayers[groupName][typeName]
+        };
+      });
+
+      baseLayers.push({
+        group: groupName,
+        layers: groupLayerEntries
+      });
+	});
+
+	map.fitBounds(bounds);
 
 var overLayers = [
 
@@ -226,12 +117,16 @@ var overLayers = [
 ];
 
 var panelLayers = new L.Control.PanelLayers(baseLayers, overLayers, {
-	//compact: true,
+	compact: true,
 	//collapsed: true,
 	collapsibleGroups: true
 });
 
 map.addControl(panelLayers);
+
+});
+	
+
 </script>
 </body>
 </html>
